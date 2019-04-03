@@ -1,0 +1,8 @@
+# using existsing nltk books corpora and fooling around
+#importing the books
+from nltk.book import *
+
+
+text1.concordance("whale")
+text2.similar("woman")
+text6.common_contexts(["christ", "king"])
