@@ -1,0 +1,10 @@
+import spacy
+nlp = spacy.load('en')
+
+
+book = open(u"/Users/nanavati_sneha/Documents/2019 /coding projects/gutenberg-project-data/crime_and_punishment").read()
+
+
+
+doc = nlp(book)
+print('Name Entity: {0}'.format(doc.ents))

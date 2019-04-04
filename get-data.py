@@ -7,10 +7,10 @@ opener = urllib2.build_opener(proxy)
 urllib2.install_opener(opener)
 
 #url for the book
-url = "http://www.gutenberg.org/files/2554/2554-0.txt"
+url = "http://www.gutenberg.org/files/36/36-0.txt"
 #requesting the content from the URL
 request = requests.get(url)
 #storing the books content
-crime_and_punishment = request.content
+book = request.content
 #printing the content (> and crime_and_punishment.txt)
-print(request.content)
+print(book)
