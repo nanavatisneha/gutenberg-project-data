@@ -1,3 +1,4 @@
+
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -14,14 +15,17 @@ def url_to_string(url):
     for script in soup(["script", "style", 'aside']):
         script.extract()
     return " ".join(re.split(r'[\n\t]+', soup.get_text()))
-ny_bb = url_to_string('https://www.nytimes.com/2018/08/13/us/politics/peter-strzok-fired-fbi.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news')
-
-
+ny_bb = url_to_string('https://www.nytimes.com/2019/04/04/us/politics/trump-biden.html')
 article = nlp(ny_bb)
-len(article.ents)
-labels = [x.label_ for x in article.ents]
-Counter(labels)
-items = [x.text for x in article.ents]
-Counter(items).most_common(3)
-sentences = [x for x in article.sents]
-print(sentences[50])
+
+# // ner detection for the article
+for ent in article.ents:
+    print(ent.text, ent.label_)
+
+# finds the line with a noun and prints it 
+# labels = [x.label_ for x in article.ents]
+# Counter(labels)
+# items = [x.text for x in article.ents]
+# Counter(items).most_common(3)
+# sentences = [x for x in article.sents]
+# print(sentences[30])
