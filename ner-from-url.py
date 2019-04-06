@@ -21,11 +21,3 @@ article = nlp(ny_bb)
 # // ner detection for the article
 for ent in article.ents:
     print(ent.text, ent.label_)
-
-# finds the line with a noun and prints it 
-# labels = [x.label_ for x in article.ents]
-# Counter(labels)
-# items = [x.text for x in article.ents]
-# Counter(items).most_common(3)
-# sentences = [x for x in article.sents]
-# print(sentences[30])
